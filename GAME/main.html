@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Play Zone</title>
+  <style>
+    button {
+      --border-radius: 12px;
+      --border-width: 5px;
+
+      appearance: none;
+      position: relative;
+      padding: 0.8em 1.2em;
+      border: 0;
+      background-color: transparent;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: transparent; /* Text color is transparent */
+      background-image: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+      );
+      background-clip: text; /* Clip the gradient to the text */
+      -webkit-background-clip: text; /* Safari/Chrome support */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    button img {
+      width: 195px;
+      height: 195px;
+    }
+
+    button::after {
+      --m-i: linear-gradient(#000, #000);
+      --m-o: content-box, padding-box;
+
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding: var(--border-width);
+      border-radius: var(--border-radius);
+      background-image: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+      );
+
+      mask-image: var(--m-i), var(--m-i);
+      mask-origin: var(--m-o);
+      mask-clip: var(--m-o);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+
+      filter: hue-rotate(0);
+      animation: hue linear 500ms infinite;
+      animation-play-state: paused;
+    }
+
+    button:hover::after {
+      animation-play-state: running;
+    }
+
+    @keyframes hue {
+      to {
+        filter: hue-rotate(1turn);
+      }
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+      grid-template-rows: repeat(2, auto); /* 2 rows */
+      grid-gap: 20px;
+      justify-items: center; /* Center buttons horizontally */
+      align-items: center; /* Center buttons vertically */
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #161724;
+      display: grid;
+      place-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="button-container">
+    <a href="index.html" target="_blank" style="text-decoration: none;">
+      <button>
+        <img src="image1.png" alt="Image 1">EMOJI CATCHER
+      </button>
+    </a>
+    <a href="C:\Users\yogir\OneDrive\Desktop\GAME\Tic-tac-toe-master\Tic-tac-toe-master\index.html" target="_blank" style="text-decoration: none;">
+      <button>
+        <img src="image2.png" alt="Image 2">TIC TAC TOE
+      </button>
+    </a>
+    <a href="C:\Users\yogir\OneDrive\Desktop\GAME\Dash.github.io-main\index.html" target="_blank" style="text-decoration: none;">
+      <button>
+        <img src="image3.png" alt="Image 3">CAR RACER
+      </button>
+    </a>
+    <a href="C:\Users\yogir\OneDrive\Desktop\GAME\football-game-master\football-game-master\index.html" target="_blank" style="text-decoration: none;">
+      <button>
+        <img src="image4.png" alt="Image 4">FOOTBALL
+      </button>
+    </a>
+    <a href="C:\Users\yogir\OneDrive\Desktop\GAME\Space-Shooter-master\space_shooter.html" target="_blank" style="text-decoration: none;">
+      <button>
+        <img src="image5.png" alt="Image 5">SPACE SHOOTER
+      </button>
+    </a>
+   
+  </div>
+
+</body>
+</html>
